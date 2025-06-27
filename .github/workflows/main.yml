@@ -48,7 +48,7 @@ jobs:
       # 移动index.html
       - name: Prepare deployment folder
         run: |
-          cp index.html dist/
+          cp manual-test.html dist/
        # 新增 GitHub Pages 部署步骤
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
