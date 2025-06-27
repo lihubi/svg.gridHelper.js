@@ -27,25 +27,6 @@ jobs:
       # 安装依赖，相当于 npm ci
       - name: Install dependencies
         run: npm install
-      # 4. 配置 Git 身份
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      # 5. 自动 bump patch 版本（0.0.1 → 0.0.2）
-      - name: Bump version
-        run: |
-          npm version patch -m "chore(release): bump version to %s"
-
-      # 6. 使用 PAT 推送 commit 和 tag
-      - name: Push changes with PAT
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${ACCESS_TOKEN}@github.com/lihubi/svg.gridHelper.js.git
-          git push origin HEAD
-          git push origin --tags
       # 执行构建步骤
       - name: 构建
         run: |
