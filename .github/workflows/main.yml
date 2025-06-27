@@ -1,50 +1,41 @@
-name: svg.gridhelper Package
-
-# 触发工作流程的事件
+name: CI
 on:
   push:
     branches:
-      - main
-      - "releases/**"
-      - dev
-
-# 按顺序运行作业
+      # 触发ci/cd的代码分支
+      - master
 jobs:
-  publish-gpr:
-    # 指定的运行器环境
+  build:
+    # 指定操作系统
     runs-on: ubuntu-latest
-    # 设置 node 版本
-    strategy:
-      matrix:
-        node-version: [18]
     steps:
-      # 拉取 github 仓库代码
-      - uses: actions/checkout@v3
-      # 设定 node 环境
-      - uses: actions/setup-node@v3
+      # 将代码拉到虚拟机
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # 指定node版本
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          # 默认配置
-          registry-url: https://registry.npmjs.org/
-      # 安装依赖，相当于 npm ci
-      - name: Install dependencies
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      # 依赖缓存策略
+      - name: Cache
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      # 依赖下载
+      - name: Installing Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: npm install
-      # 执行构建步骤
-      - name: 构建
-        run: |
-          npm run build
-      # 执行部署步骤
-      - name: 部署
-        # 默认配置
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          # 指定密钥，即在第一步中设置的
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # 指定推送到的远程分支
-          BRANCH: main
-          # 指定构建之后的产物要推送哪个目录的代码
-          FOLDER: .
-      - run: npm publish
+      # 打包
+      - name: Running Build
+        run: npm run build
+      # 发布
+      - name: Running Publish
+        run: npm publish
         env:
-          # 在第三步中设置的 NPM_TOKEN
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          # NPM_TOKEN is access token
+         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
