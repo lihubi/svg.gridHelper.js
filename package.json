@@ -51,8 +51,7 @@
   },
   "scripts": {
     "build": "npm run fix && vite build",
-    "fix": "npx eslint --fix",
-    "prepublishOnly": "rm -rf ./dist && npm run build"
+    "fix": "npx eslint --fix"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
