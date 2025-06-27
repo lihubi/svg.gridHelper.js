@@ -33,13 +33,6 @@ jobs:
       - name: 构建
         run: |
           npm run build
-      # 版本号自动更新（可选）
-      - name: Bump version
-        run: |
-          npm version patch -m "Auto bump version to ${npm_package_version}"
-          git push origin HEAD:${{ github.ref }} --tags
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # 执行部署步骤
       - name: 部署
         # 默认配置
