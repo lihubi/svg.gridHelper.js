@@ -1,6 +1,6 @@
 {
   "name": "svg-gridhelper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An extension for svg.js which adds a grid helper to the svg",
   "type": "module",
   "main": "dist/svg.gridhelper.js",
