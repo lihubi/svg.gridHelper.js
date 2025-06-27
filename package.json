@@ -1,6 +1,6 @@
 {
   "name": "svg-gridhelper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An extension for svg.js which adds a grid helper to the svg",
   "type": "module",
   "main": "dist/svg.gridhelper.js",
@@ -51,13 +51,15 @@
   },
   "scripts": {
     "build": "npm run fix && vite build",
-    "fix": "npx eslint --fix"
+    "fix": "npx eslint --fix",
+    "release": "standard-version"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.5",
+    "standard-version": "^9.5.0",
     "typescript": "^5.0.2",
     "vite": "^4.2.1"
   },
