@@ -45,10 +45,14 @@ jobs:
         env:
           # 在第三步中设置的 NPM_TOKEN
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      # 移动index.html
+      - name: Prepare deployment folder
+        run: |
+          cp index.html dist/
        # 新增 GitHub Pages 部署步骤
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: .  # 指向构建后的静态文件目录
+          publish_dir: ./dist  # 指向构建后的静态文件目录
           keep_files: true      # 保留已有文件
