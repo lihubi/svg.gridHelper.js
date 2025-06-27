@@ -1,4 +1,6 @@
 变更日志
+### [0.0.11](https://github.com/svgdotjs/svg.gridhelper.js/compare/v0.0.10...v0.0.11) (2025-06-27)
+
 ### [0.0.10](https://github.com/svgdotjs/svg.gridhelper.js/compare/v0.0.3...v0.0.10) (2025-06-27)
 
 
