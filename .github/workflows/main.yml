@@ -31,6 +31,10 @@ jobs:
       - name: 构建
         run: |
           npm run build
+      # 更改版本号
+      - name: 更改版本号
+        run: |
+          npm run release
       # 执行部署步骤
       - run: npm publish
         env:
