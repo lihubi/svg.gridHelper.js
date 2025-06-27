@@ -1,11 +1,11 @@
 name: Node.js Package
- 
+
 # 触发工作流程的事件
 on:
   push:
     branches:
       - main
- 
+
 # 按顺序运行作业
 jobs:
   publish-gpr:
@@ -27,21 +27,19 @@ jobs:
       # 安装依赖，相当于 npm ci
       - name: Install dependencies
         run: npm install
+      # 4. 自动升级 patch 版本号
+      - name: Bump version
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          npm version patch -m "chore(release): bump version to %s"
+          git push origin HEAD
+          git push origin --tags
       # 执行构建步骤
       - name: 构建
         run: |
           npm run build
       # 执行部署步骤
-      - name: 部署
-        # 默认配置
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          # 在第三步中设置的 ACCESS_TOKEN 
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # 指定推送到的远程分支
-          BRANCH: pages
-          # 指定构建之后的产出路径
-          FOLDER: .
       - run: npm publish
         env:
           # 在第三步中设置的 NPM_TOKEN
