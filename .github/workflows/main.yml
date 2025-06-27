@@ -19,7 +19,7 @@ jobs:
       # 拉取 github 仓库代码
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 获取完整历史，这样 Git 标签和提交历史都会存在
+          fetch-depth: 0 # 获取完整历史，这样 Git 标签和提交历史都会存在
       # 设定 node 环境
       - uses: actions/setup-node@v3
         with:
@@ -42,6 +42,12 @@ jobs:
       - name: 更改版本号
         run: |
           npm run release
+      # 更改版本号
+      - name: Commit version bump
+        run: |
+          git add . 
+          git commit -m "chore: bump version [skip ci]" || echo "No changes to commit"
+          git push
       # 执行部署步骤
       - run: npm publish
         env:
