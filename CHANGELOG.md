@@ -1,10 +1,10 @@
 变更日志
-### 0.0.5 (2025-06-27)
+### 0.0.6 (2025-06-27)
 
 
 ### 👷 Continuous Integration | CI 配置
 
-* use standard-version ([5fa96a1](https://github.com/svgdotjs/svg.gridhelper.js/commit/5fa96a19ba3d3098f7b704b5ea6dc749d47899f0))
+* use standard-version ([b762572](https://github.com/svgdotjs/svg.gridhelper.js/commit/b762572ad4857ff22c732c00f85aa194ed04a4ce))
 
 ### 0.0.3 (2025-06-27)
 
