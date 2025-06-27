@@ -1,5 +1,5 @@
 {
-  "name": "svg.gridhelper.js",
+  "name": "svg.gridhelper",
   "version": "0.0.1",
   "description": "An extension for svg.js which adds a grid helper to the svg",
   "type": "module",
