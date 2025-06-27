@@ -41,7 +41,7 @@ jobs:
           # 指定推送到的远程分支
           BRANCH: pages
           # 指定构建之后的产出路径
-          FOLDER: build
+          FOLDER: .
       - run: npm publish
         env:
           # 在第三步中设置的 NPM_TOKEN
