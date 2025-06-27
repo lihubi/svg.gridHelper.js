@@ -1,41 +1,41 @@
 {
-  "name": "@svgdotjs/svg.gridHelper.js",
+  "name": "@svgdotjs/svg.gridhelper.js",
   "version": "3.0.6",
   "description": "An extension for svg.js which adds a grid helper to the svg",
   "type": "module",
-  "main": "dist/svg.gridHelper.js",
-  "module": "src/svg.gridHelper.js",
+  "main": "dist/svg.gridhelper.js",
+  "module": "src/svg.gridhelper.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./svg.gridHelper.js.d.ts",
-        "default": "./src/svg.gridHelper.js"
+        "types": "./svg.gridhelper.js.d.ts",
+        "default": "./src/svg.gridhelper.js"
       },
       "require": {
-        "types": "./svg.gridHelper.js.d.cts",
-        "default": "./src/svg.gridHelper.js"
+        "types": "./svg.gridhelper.js.d.cts",
+        "default": "./src/svg.gridhelper.js"
       },
       "browser": {
-        "types": "./svg.gridHelper.js.d.ts",
-        "default": "./src/svg.gridHelper.js"
+        "types": "./svg.gridhelper.js.d.ts",
+        "default": "./src/svg.gridhelper.js"
       }
     }
   },
-  "unpkg": "dist/svg.gridHelper.js",
-  "jsdelivr": "dist/svg.gridHelper.js",
+  "unpkg": "dist/svg.gridhelper.js",
+  "jsdelivr": "dist/svg.gridhelper.js",
   "files": [
     "/dist",
     "/src",
-    "/svg.gridHelper.js.d.ts",
-    "/svg.gridHelper.js.d.cts"
+    "/svg.gridhelper.js.d.ts",
+    "/svg.gridhelper.js.d.cts"
   ],
   "keywords": [
     "svg.js",
-    "gridHelper"
+    "gridhelper"
   ],
-  "bugs": "https://github.com/svgdotjs/svg.gridHelper.js/issues",
+  "bugs": "https://github.com/svgdotjs/svg.gridhelper.js/issues",
   "license": "MIT",
-  "typings": "./svg.gridHelper.js.d.ts",
+  "typings": "./svg.gridhelper.js.d.ts",
   "author": {
     "name": "Li Kang"
   },
@@ -44,10 +44,10 @@
       "name": "Li Kang"
     }
   ],
-  "homepage": "https://github.com/svgdotjs/svg.gridHelper.js",
+  "homepage": "https://github.com/svgdotjs/svg.gridhelper.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svgdotjs/svg.gridHelper.js.git"
+    "url": "git+https://github.com/svgdotjs/svg.gridhelper.js.git"
   },
   "scripts": {
     "build": "npm run fix && vite build",

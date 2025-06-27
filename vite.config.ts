@@ -18,10 +18,10 @@ export default defineConfig({
   build: {
     sourcemap: true,
     lib: {
-      entry: 'src/svg.gridHelper.js',
+      entry: 'src/svg.gridhelper.js',
       name: 'SVG',
       formats: ['umd'],
-      fileName: () => `svg.gridHelper.js`,
+      fileName: () => `svg.gridhelper.js`,
     },
     rollupOptions: {
       output: {
