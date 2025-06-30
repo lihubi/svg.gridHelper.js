@@ -38,8 +38,20 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      # 执行部署步骤
-      - run: npm publish
-        env:
-          # 在第三步中设置的 NPM_TOKEN
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+       # 新增 GitHub Pages 部署步骤
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./dist  # 指向构建后的静态文件目录
+          keep_files: true      # 保留已有文件
+      # 更改版本号
+      - name: 更改版本号
+        run: |
+          npm run release
+      - name: Commit version bump
+        run: |
+          git add . 
+          git commit -m "chore: bump version [skip ci]" || echo "No changes to commit"
+          git push
+

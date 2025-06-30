@@ -17,6 +17,7 @@ const headerLong = `/*!
 export default defineConfig({
   build: {
     sourcemap: true,
+    emptyOutDir: false,
     lib: {
       entry: 'src/svg.gridhelper.js',
       name: 'SVG',

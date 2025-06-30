@@ -52,7 +52,7 @@
   "scripts": {
     "build": "npm run fix && vite build",
     "fix": "npx eslint --fix",
-    "release": "standard-version && npm publish"
+    "release": "standard-version"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
