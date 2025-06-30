@@ -1,4 +1,11 @@
 变更日志
+### [0.0.2](https://github.com/svgdotjs/svg.gridhelper.js/compare/v0.0.14...v0.0.2) (2025-06-30)
+
+
+### 👷 Continuous Integration | CI 配置
+
+* use standard-version ([2e83bae](https://github.com/svgdotjs/svg.gridhelper.js/commit/2e83bae237182fe7a4ba5de48dccc6e87e240784))
+
 ### [0.0.14](https://github.com/svgdotjs/svg.gridhelper.js/compare/v0.0.13...v0.0.14) (2025-06-27)
 
 ### [0.0.13](https://github.com/svgdotjs/svg.gridhelper.js/compare/v0.0.12...v0.0.13) (2025-06-27)
