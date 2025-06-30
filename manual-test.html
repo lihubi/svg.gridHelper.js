@@ -23,7 +23,7 @@
 
     <script src="https://unpkg.com/@svgdotjs/svg.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.panzoom.js@2.1.2/dist/svg.panzoom.min.js"></script>
-    <script src="dist/svg.gridHelper.js"></script>
+    <script src="dist/svg.gridhelper.js"></script>
 
     <script>
       // 创建 SVG 画布
@@ -34,15 +34,15 @@
         .viewbox(0, 0, dom.clientWidth, dom.clientHeight)
         .panZoom({
           zoomFactor: 0.1,
-          // zoomMin: 0.01,
-          // zoomMax: 4,
+          zoomMin: 0.01,
+          zoomMax: 4,
         })
         .gridHelper({
           gridSize: 50,
           minPixels: 50,
           gridColor: "gray",
           labelColor: "#666",
-          showLabel: false,
+          showLabel: true,
         });
 
       draw.on("zoom", () => {

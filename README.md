@@ -4,8 +4,10 @@ A plugin for the [svgdotjs.github.io](https://svgdotjs.github.io/) library to ma
 
 svg.gridhelper.js is licensed under the terms of the MIT License.
 
-## Usage
+# Demo
+View online examples: [https://lihubi.github.io/svg.gridHelper.js/manual-test.html](https://lihubi.github.io/svg.gridHelper.js/manual-test.html)
 
+## Usage
 Install the plugin:
 
 ```sh
