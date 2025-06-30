@@ -54,4 +54,9 @@ jobs:
           git add . 
           git commit -m "chore: bump version [skip ci]" || echo "No changes to commit"
           git push
+      # 执行部署步骤
+      - run: npm publish
+        env:
+          # 在第三步中设置的 NPM_TOKEN
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
