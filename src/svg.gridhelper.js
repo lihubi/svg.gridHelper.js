@@ -34,8 +34,6 @@ class GridHelper {
         labelColor: "#666",
         gridStrokeWidth: 1,
         labelFontSize: 12,
-        minZoom: 0.1, // 新增最小zoom限制
-        maxZoom: 10, // 新增最大zoom限制
         showLabel: true,
       },
       options
